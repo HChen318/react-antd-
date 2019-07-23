@@ -9,7 +9,7 @@ create-react-app mymanager
 ####2. 安装所需工具
 
 ```
-yarn add axios less-loder react-router antd
+yarn add axios less-loder react-router-dom antd
 ```
 
 ####3. 打开webpack配置,暴露webpack配置
@@ -33,3 +33,10 @@ yarn eject
 #### 4.配置less-loader
 
 ​	依葫芦画瓢
+
+#### 5.项目中安装的包
+
+```
+jsonp (跨域请求百度天气)
+```
+

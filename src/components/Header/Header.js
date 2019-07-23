@@ -28,18 +28,17 @@ export default class Header extends Component {
             name: 'CH',
         })
         let city = "shenzhen"
-
+        //获取百度天气
         axios.jsonp(
             {url: "http://api.map.baidu.com/telematics/v3/weather?location=" + encodeURIComponent(city) +"&output=json&ak=3p49MVra6urFRGOT9s8UBWr2"}
         ).then(res =>{
-            console.log(res,111);
+            // console.log(res,111);
             if(res.status === 'success'){
                 this.setState({
                     weather:res.results[0] && res.results[0].weather_data[0].weather,
                     picUrl:res.results[0] && res.results[0].weather_data[0].dayPictureUrl
                 })
-            }
-            
+            }   
         })
     }
 
