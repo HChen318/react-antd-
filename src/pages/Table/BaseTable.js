@@ -95,7 +95,7 @@ export default class BaseTable extends Component {
             selectedRowKeys
         })
     }
-    //行
+    
     onSelectChange = (selectedRowKeys,row) =>{
         console.log(selectedRowKeys,row);
         message.info(`id为${row[0].id}姓名${row[0].userName}`)
@@ -114,7 +114,7 @@ export default class BaseTable extends Component {
         const rowSelection = {
             type: 'radio',
             selectedRowKeys,
-            onChange:this.onSelectChange
+            // onChange:this.onSelectChange
         }
         const rowCheckSelection = {
             selectedRowKeys:selectedRowKeys2,

@@ -36,7 +36,7 @@ export default class NavLeft extends Component {
     render() {
         const { menuTree } = this.state
         return (
-            <div>
+            <div className="menu-left">
                 <div className="logo">
                     <img src="/assets/logo-ant.svg" alt="" />
                     <h1>CH Learn</h1>

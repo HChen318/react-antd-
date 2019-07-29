@@ -1,3 +1,9 @@
+import React from 'react'
+import {Select} from 'antd'
+
+const {Option} = Select
+
+
 export  default {
     formateDate (data){
         if(!data) return ''
@@ -21,5 +27,16 @@ export  default {
             },
             pageSizeOptions:['5','10','15','20']
         }
+    },
+    getOptionList(data){
+        if(!data){
+            return []
+        }
+        let OptionVal = []
+        data.forEach(ele =>{
+            OptionVal.push(<Option value={ele.id} key={ele.id}>{ele.value}</Option>) 
+        })
+        return OptionVal
     }
+
 }

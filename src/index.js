@@ -12,7 +12,6 @@ import zhCN from 'antd/es/locale-provider/zh_CN';
 import {LocaleProvider} from 'antd'
 
 
-
 ReactDOM.render(<LocaleProvider locale={zhCN}><Router /></LocaleProvider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

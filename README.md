@@ -6,13 +6,13 @@
 create-react-app mymanager 
 ```
 
-####2. 安装所需工具
+####2.安装所需工具
 
 ```
 yarn add axios less-loder react-router-dom antd
 ```
 
-####3. 打开webpack配置,暴露webpack配置
+####3.打开webpack配置,暴露webpack配置
 
 ```
 yarn eject 
