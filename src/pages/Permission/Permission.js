@@ -49,8 +49,7 @@ export default class Permission extends Component {
                 visible:false,
                 checkedKeys:[],
                 name:''
-            }
-            
+            } 
         }
     }
 

@@ -52,7 +52,6 @@ class BaseForm extends Component {
                     listArr.push(InputVal)
                 } else if (type == 'RangePicker_type') {
                     const dateFormat = ele.dateFormat || 'YYYY/MM/DD';
-                    console.log(ele.startTime,ele.endTime);
                     const initialValue = [ele.startTime,ele.endTime]
                     let RangePickerVal = <Form.Item label={label} key={ele.field} >
                         {getFieldDecorator(field, {
@@ -65,12 +64,23 @@ class BaseForm extends Component {
                         }
                     </Form.Item>
                     listArr.push(RangePickerVal)
+                } else if (type == "DatePicker_type"){
+                    const dateFormat = ele.dateFormat || 'YYYY/MM/DD';
+                    let DatePickerVal = <Form.Item label={label} key={ele.field} >
+                        {getFieldDecorator(field, {
+                            initialValue:  null
+                        })(
+                            <DatePicker format={dateFormat} />
+                        )
+                        }
+                    </Form.Item>
+                    listArr.push(DatePickerVal)
                 }
             })
         }
         return listArr
     }
-    search = () =>{
+    searchFormVal = () =>{
         this.props.form.validateFields((err,values) =>{
             if(!err){
                 console.log(values);
@@ -90,7 +100,7 @@ class BaseForm extends Component {
                 <Form layout="inline">
                     {this.initFormList()}
                     <Form.Item >
-                        <Button type="primary" onClick={this.search} onClick={this.search}>查询</Button>
+                        <Button type="primary"  onClick={this.searchFormVal}>查询</Button>
                         <Button type="primary" style={{ marginLeft: 30 }}>重置</Button>
                     </Form.Item>
                 </Form>

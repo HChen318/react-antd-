@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Switch, Route,Redirect } from 'react-router-dom'
+import { Spin } from 'antd';
+import Loadable from 'react-loadable'
 import Login from '../src/pages/Login/Login'
 import App from './App'
 import Admin from './Admin'
@@ -18,10 +20,34 @@ import City from './pages/City/City'
 import Order from './pages/Order/Order'
 import OrderDetail from './pages/Order/OrderDetail'
 import Permission from './pages/Permission/Permission'
+import User from './pages/User/User'
 import Home from '../src/pages/home/Home'
-import moment from 'moment';
-import 'moment/locale/zh-cn';
-moment.locale('zh-cn');
+import BikeMap from '../src/pages/BikeMap/BikeMap'
+import moment from 'moment'
+import 'moment/locale/zh-cn'
+moment.locale('zh-cn')
+
+const MyLoadingComponent = ({ isLoading, error }) => {
+    // Handle the loading state
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
+    // Handle the error state
+    else if (error) {
+        return <div>Sorry, there was a problem loading the page.</div>;
+    }
+    else {
+        return null;
+    }
+};
+
+//按需加载
+const BikeMap11111 = Loadable({
+    loader: () => import('../src/pages/BikeMap/BikeMap'),
+    loading:() => <Spin size="large" />
+     
+})
+
 
 
 export default class Router extends Component {
@@ -30,7 +56,7 @@ export default class Router extends Component {
             <div>
                 <HashRouter>
                     <App>
-                    <Switch>
+                    <Switch>  
                         <Route path="/login" component={Login} />
                         <Route path="/common" render={()=>
                             <Common>
@@ -53,6 +79,8 @@ export default class Router extends Component {
                                     <Route path="/city" component={City} />
                                     <Route path="/order" component={Order} />
                                     <Route path="/permission" component={Permission} />
+                                    <Route path="/user" component={User} />
+                                    <Route path="/bikeMap" component={BikeMap11111} />
                                     <Redirect exact from="/" to="/home"  />
                                     <Route component={NoMatch} />
                                 </Switch>

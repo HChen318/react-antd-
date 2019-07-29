@@ -6,15 +6,11 @@ const { TreeNode } = Tree;
 
 class PermissionSet extends Component {
     constructor(props) {
-        super(props)
-
-        
+        super(props)  
         this.state = {
             checkedKeys:  []
         }
     }
-
-
 
     componentWillReceiveProps(newProps) {
         const {permissionParams} = newProps
@@ -24,20 +20,12 @@ class PermissionSet extends Component {
                     checkedKeys:permissionParams.checkedKeys
                 })
         }
-
-    }
-
-    componentWillMount() {
-
     }
 
     handleCancel = () => {
         this.props.onCancel()
     }
 
-    handleOk = () => {
-
-    }
     
     onCheck = (checkedKeys) =>{
         console.log(checkedKeys);
