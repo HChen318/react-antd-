@@ -22,7 +22,7 @@ yarn eject
 出现报错Build fails after eject: Cannot find module '@babel/plugin-transform-react-jsx' 
 ```
 
-解决方法
+####解决方法
 
 ```
 1.删除 node_modules 文件夹
@@ -30,7 +30,7 @@ yarn eject
 3.运行
 ```
 
-#### 4.配置less-loader
+####4.配置less-loader
 
 ​	依葫芦画瓢
 

@@ -22,10 +22,17 @@ import OrderDetail from './pages/Order/OrderDetail'
 import Permission from './pages/Permission/Permission'
 import User from './pages/User/User'
 import Home from '../src/pages/home/Home'
+import Rich from '../src/pages/Rich/Rich'
 import BikeMap from '../src/pages/BikeMap/BikeMap'
+
+
 import moment from 'moment'
 import 'moment/locale/zh-cn'
 moment.locale('zh-cn')
+
+
+
+
 
 const MyLoadingComponent = ({ isLoading, error }) => {
     // Handle the loading state
@@ -78,6 +85,7 @@ export default class Router extends Component {
                                     <Route path="/table/high" component={HighTable} />
                                     <Route path="/city" component={City} />
                                     <Route path="/order" component={Order} />
+                                    <Route path="/rich" component={Rich} />
                                     <Route path="/permission" component={Permission} />
                                     <Route path="/user" component={User} />
                                     <Route path="/bikeMap" component={BikeMap11111} />
@@ -89,8 +97,6 @@ export default class Router extends Component {
                     </Switch>
                     </App>
                 </HashRouter>
-
-
             </div>
         )
     }

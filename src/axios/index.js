@@ -32,6 +32,8 @@ export default class Axios {
                 timeout: 5000,
                 params: (option.data && option.data.param) || ''
             }).then(res=>{
+                console.log(res);
+                
                 if(res.status == 200){
                     if(res.data.code == 0){
                         if(option.data && option.data.isshow != false){
@@ -47,6 +49,10 @@ export default class Axios {
                 } else {
                     reject(res.data)
                 }
+            }).catch(err =>{
+                console.log('axios 出错');
+                
+                document.getElementById('ajaxLoading').style.display = 'none'
             })
         })
     }

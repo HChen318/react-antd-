@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { Col, Row } from 'antd';
 import time from '../../utils/utils'
 import axios from '../../axios'
-
-
+import { connect } from 'react-redux'
+import {menuAction} from '../../react-redux/action/action'
 import './header.less'
 
-export default class Header extends Component {
+class Header extends Component {
     constructor() {
         super()
         this.state = {
@@ -66,7 +66,7 @@ export default class Header extends Component {
                 {
                     !menuType ?
                         <Row className="breadcrumb">
-                            <Col span={4} className="breadcrumb-title">首页</Col>
+                            <Col span={4} className="breadcrumb-title">{this.props.title}</Col>
                             <Col span={20} className="weather">
                                 <span>{sysTime}</span>
                                 <span><img src={picUrl} alt="" /></span>
@@ -78,3 +78,14 @@ export default class Header extends Component {
         )
     }
 }
+
+//把仓库中的数据映射到props
+const mapStateToPros = (state) =>{
+    console.log(state);
+    return {
+        title:state && state.title
+    }
+}
+
+
+export default connect(mapStateToPros,null)(Header)

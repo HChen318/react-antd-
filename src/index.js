@@ -10,9 +10,9 @@ import Main2 from './pages/router-demo/router2/Main'
 import Router from './Router'
 import zhCN from 'antd/es/locale-provider/zh_CN';
 import {LocaleProvider} from 'antd'
-
-
-ReactDOM.render(<LocaleProvider locale={zhCN}><Router /></LocaleProvider>, document.getElementById('root'));
+import store from './react-redux/store/store'
+import {Provider} from 'react-redux'
+ReactDOM.render(<Provider store={store}><LocaleProvider locale={zhCN}><Router /></LocaleProvider></Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
